@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Dankik</title>
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+        
+         <style>
+            .selected {
+                background-color: gray;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h3> 세탁기 예약 시스템 - 진리관</h3>
+        <br>
+        <form action="/home" method="post">
+            <fieldset>
+                <legend> 일자 선택 및 시간 선택 </legend>
+                <br>
+                
+                <input type="date" name="reservation_date" id="reservationDate"/>
+                
+                <script>
+				  var reservationDateInput = document.getElementById('reservationDate');
+				
+				  reservationDateInput.addEventListener('change', function() {
+				    var selectedDate = reservationDateInput.value;
+				    console.log("선택된 날짜 : " + selectedDate);
+				  });
+				</script>
+              
+              	<br>
+                <br>
+                <button type="button" name="reservation_time" id="time-1" onclick="getValue1(1)">01:00</button>
+                <button type="button" name="reservation_time" id="time-2" onclick="getValue1(2)">02:00</button>
+                <button type="button" name="reservation_time" id="time-3" onclick="getValue1(3)">03:00</button>
+                <button type="button" name="reservation_time" id="time-4" onclick="getValue1(4)">04:00</button>
+                <button type="button" name="reservation_time" id="time-5" onclick="getValue1(5)">05:00</button>
+                <button type="button" name="reservation_time" id="time-6" onclick="getValue1(6)">06:00</button>
+                <button type="button" name="reservation_time" id="time-7" onclick="getValue1(7)">07:00</button>
+                <button type="button" name="reservation_time" id="time-8" onclick="getValue1(8)">08:00</button>
+                <button type="button" name="reservation_time" id="time-9" onclick="getValue1(9)">09:00</button>              
+                <button type="button" name="reservation_time" id="time-10" onclick="getValue1(10)">10:00</button>
+                <button type="button" name="reservation_time" id="time-11" onclick="getValue1(11)">11:00</button>
+                <button type="button" name="reservation_time" id="time-12" onclick="getValue1(12)">12:00</button>
+                <button type="button" name="reservation_time" id="time-13" onclick="getValue1(13)">13:00</button>
+                <button type="button" name="reservation_time" id="time-14" onclick="getValue1(14)">14:00</button>
+                <button type="button" name="reservation_time" id="time-15" onclick="getValue1(15)">15:00</button>
+                <button type="button" name="reservation_time" id="time-16" onclick="getValue1(16)">16:00</button>
+                <button type="button" name="reservation_time" id="time-17" onclick="getValue1(17)">17:00</button>
+                <button type="button" name="reservation_time" id="time-18" onclick="getValue1(18)">18:00</button>
+                <button type="button" name="reservation_time" id="time-19" onclick="getValue1(19)">19:00</button>
+                <button type="button" name="reservation_time" id="time-20" onclick="getValue1(20)">20:00</button>
+                <button type="button" name="reservation_time" id="time-21" onclick="getValue1(21)">21:00</button>
+                <button type="button" name="reservation_time" id="time-22" onclick="getValue1(22)">22:00</button>
+                <button type="button" name="reservation_time" id="time-23" onclick="getValue1(23)">23:00</button>
+                <button type="button" name="reservation_time" id="time-24" onclick="getValue1(24)">24:00</button>
+                <input type="hidden" name="reservation_time" id="reservation_time_input" value=""/>
+                
+                <br>
+                <br>
+                
+                
+                <script>
+                
+                var reservation_time;
+                
+                
+				/* function f1() {
+				  reservation_time = "1";
+				  console.log(reservation_time);  // 클릭한 버튼의 값이 콘솔에 출력됩니다.
+				  // 이곳에서 필요한 로직을 처리할 수 있습니다.
+				} */
+					
+				function getValue1(value) {
+					reservation_time = value.toString();
+					console.log("선택된 시간 : "+reservation_time+":00"); 
+				        // 필요한 로직 처리
+				        
+				    var reservationTimeInput = document.getElementById('reservation_time_input');
+  					reservationTimeInput.value = reservation_time;
+				     /* System.out.println(reservation_time); */
+				 } 
+	  
+				
+					 var buttons = document.querySelectorAll('button[name="reservation_time"]');
+	                    
+	                    buttons.forEach(function(button) {
+	                        button.addEventListener('click', function() {
+	                            // 클릭된 버튼에 스타일 적용
+	                            buttons.forEach(function(btn) {
+	                                btn.classList.remove('selected');
+	                            });
+	                            this.classList.add('selected');
+	                        });
+	                    });
+				</script>
+
+
+                <label for="choice"> 세탁기 선택: </label>
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 1" onclick="getValue2(1)"/>세탁기 1
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 2" onclick="getValue2(2)"/>세탁기 2
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 3" onclick="getValue2(3)"/>세탁기 3
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 4" onclick="getValue2(4)"/>세탁기 4
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 5" onclick="getValue2(5)"/>세탁기 5
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 6" onclick="getValue2(6)"/>세탁기 6
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 7" onclick="getValue2(7)"/>세탁기 7
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 8" onclick="getValue2(8)"/>세탁기 8
+                <input type="radio" name="laundry_num" id="choice" value="세탁기 9" onclick="getValue2(9)"/>세탁기 9
+
+                <br>
+                <script>
+                
+                var radioButtons = document.getElementsByName('laundry_num');
+                
+                function getValue2(value) {
+                	var selectedValue;
+
+                	for (var i = 0; i < radioButtons.length; i++) {
+                	      if (radioButtons[i].checked) {
+                	        selectedValue = radioButtons[i].value;
+                	        break;
+                	      }
+                	    }
+
+                	    /* console.log("선택된세탁기 : 세탁기"+value); */
+                	    console.log("선택된 세탁기 : "+selectedValue);
+                }
+                </script>
+            </fieldset>
+            <br>
+            <br>
+            <input type="submit" value="예약"/>
+            <input type="reset" value="취소"/>            
+        </form>
+        
+        
+        
+        <br>
+        <a href="/member/save">회원가입</a>  
+    	<a href="/member/login">로그인</a>
+    </body>
+</html>
